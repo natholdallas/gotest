@@ -7,7 +7,7 @@ import (
 )
 
 func PrintJSON(v any) {
-	result, _ := json.MarshalIndent(v, "", "\t")
+	result, _ := json.MarshalIndent(v, "", "  ")
 	log.Println(string(result))
 }
 

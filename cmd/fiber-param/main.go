@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/log"
 )
 
 func main() {
@@ -15,9 +16,14 @@ func main() {
 		},
 	})
 
-	app.Get("", func(c *fiber.Ctx) error {
-		c.Status(fiber.StatusOK)
-		c.Set(fiber.HeaderContentType, fiber.MIMEApplicationJSON)
+	app.Get("/:id", func(c *fiber.Ctx) error {
+		a := c.Params("id")
+		b, err := c.ParamsInt("id", 1)
+		log.Info(a)
+		log.Info(b)
+		if err != nil {
+			log.Error(err)
+		}
 		return nil
 	})
 
