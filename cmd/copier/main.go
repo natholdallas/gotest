@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/jinzhu/copier"
-	t "github.com/natholdallas/gotest/pkg/tools"
+	"github.com/natholdallas/natools4go/ptr"
 )
 
 type Model struct {
@@ -56,36 +56,36 @@ func main() {
 	println("\nCopy test\n")
 	test := Test{}
 	copier.Copy(&test, In1{1, "Now", "Username", "Password"})
-	t.PrintJSON(test)
+	ptr.JSON(test)
 	test = Test{}
 	copier.Copy(&test, In2{1, "Now", "Username", "Password"})
-	t.PrintJSON(test)
+	ptr.JSON(test)
 	test = Test{Username: "1234"}
 	copier.Copy(&test, In2{1, "Now", "", "Password"})
-	t.PrintJSON(test)
+	ptr.JSON(test)
 
 	// DeepCopy and Copy compare
 	println("\nDeepCopy and Copy compare\n")
 	test3 := TestOut{}
 	test = Test{Model: Model{1, "Now"}, Username: "Username", Password: "Password", Config: Config{true}}
 	copier.Copy(&test3, test)
-	t.PrintJSON(test3)
+	ptr.JSON(test3)
 
 	// Copy pointer value source
 	println("\nCopy pointer value source\n")
 	test = Test{}
 	test4in := Test{Model: Model{1, "Now"}, Username: "Username", Password: "Password", Config: Config{true}}
 	copier.Copy(&test, &test4in)
-	t.PrintJSON(test)
+	ptr.JSON(test)
 	test.Username = ""
-	t.PrintJSON(test)
-	t.PrintJSON(test4in)
+	ptr.JSON(test)
+	ptr.JSON(test4in)
 
 	// Copy test reverse
 	println("\nCopy test reverse\n")
 	test = Test{Model: Model{ID: 1, CreatedAt: "12345"}}
 	model := Model{}
 	copier.Copy(&model, test)
-	t.PrintJSON(test)
-	t.PrintJSON(model)
+	ptr.JSON(test)
+	ptr.JSON(model)
 }

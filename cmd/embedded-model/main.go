@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	t "github.com/natholdallas/gotest/pkg/tools"
+	"github.com/natholdallas/natools4go/ptr"
 )
 
 type Model struct {
@@ -37,14 +37,14 @@ type TestD struct {
 
 func TestStruct(testing *testing.T) {
 	// Print
-	t.PrintStruct(TestA{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	t.PrintStruct(TestB{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	t.PrintStruct(TestC{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	t.PrintStruct(TestD{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	ptr.Struct(TestA{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	ptr.Struct(TestB{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	ptr.Struct(TestC{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	ptr.Struct(TestD{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
 
 	// Jsonify
-	t.PrintJSON(TestA{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	t.PrintJSON(TestB{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	t.PrintJSON(TestC{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	t.PrintJSON(TestD{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	ptr.JSON(TestA{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	ptr.JSON(TestB{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	ptr.JSON(TestC{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	ptr.JSON(TestD{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
 }

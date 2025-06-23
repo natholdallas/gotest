@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
-	t "github.com/natholdallas/gotest/pkg/tools"
+	"github.com/natholdallas/natools4go/ptr"
 )
 
 func Err(value any, statis ...int) *fiber.Error {
@@ -18,5 +18,5 @@ func Err(value any, statis ...int) *fiber.Error {
 
 func main() {
 	err := Err("hello world")
-	t.PrintJSON(err)
+	ptr.JSON(err)
 }

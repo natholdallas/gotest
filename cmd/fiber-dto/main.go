@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
-	t "github.com/natholdallas/gotest/pkg/tools"
+	"github.com/natholdallas/natools4go/ptr"
 )
 
 type User struct {
@@ -26,7 +26,7 @@ func main() {
 	app.Get("", func(c *fiber.Ctx) error {
 		user := User{}
 		c.BodyParser(&user)
-		t.PrintJSON(user)
+		ptr.JSON(user)
 		return c.JSON(user)
 	})
 
