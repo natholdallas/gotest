@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 	"time"
 )
 
@@ -16,18 +17,10 @@ type Result struct {
 }
 
 func main() {
-	d := []byte(`{
-		"rfc3339": "2023-04-01T15:04:05Z",
-		"rfc3339nano": "2023-04-01T15:04:05.999999999Z",
-		"iso8601": "2023-04-01T15:04:05+08:00",
-		"dateOnly": "2023-04-01",
-		"unix": 1680354245,
-		"unixMs": 1680354245123
-	}`)
-
+	d, _ := os.ReadFile("./cmd/json-date/time.json")
 	var result Result
-
 	json.Unmarshal(d, &result)
+
 	fmt.Printf("RFC3339: %v\n", result.RFC3339)
 	fmt.Printf("RFC3339Nano: %v\n", result.RFC3339Nano)
 	fmt.Printf("ISO8601: %v\n", result.ISO8601)
