@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	"github.com/natholdallas/natools4go/ptr"
+	"github.com/natholdallas/natools4go/spew"
 )
 
 type Model struct {
@@ -37,14 +37,14 @@ type TestD struct {
 
 func TestStruct(testing *testing.T) {
 	// Print
-	ptr.Struct(TestA{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	ptr.Struct(TestB{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	ptr.Struct(TestC{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	ptr.Struct(TestD{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	spew.Struct(TestA{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	spew.Struct(TestB{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	spew.Struct(TestC{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	spew.Struct(TestD{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
 
 	// Jsonify
-	ptr.JSON(TestA{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	ptr.JSON(TestB{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	ptr.JSON(TestC{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
-	ptr.JSON(TestD{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	spew.JSON(TestA{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	spew.JSON(TestB{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	spew.JSON(TestC{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
+	spew.JSON(TestD{Model{Username: "MUsername", Password: "MPassword"}, "Username", "Password"})
 }

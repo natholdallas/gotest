@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/jinzhu/copier"
-	"github.com/natholdallas/natools4go/ptr"
+	"github.com/natholdallas/natools4go/spew"
 )
 
 type A struct {
@@ -23,5 +23,5 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	ptr.JSON(a)
+	spew.JSON(a)
 }

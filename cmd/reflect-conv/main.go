@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/natholdallas/natools4go/ptr"
+	"github.com/natholdallas/natools4go/spew"
 )
 
 func Err(value any, statis ...int) *fiber.Error {
@@ -17,6 +17,5 @@ func Err(value any, statis ...int) *fiber.Error {
 }
 
 func main() {
-	err := Err("hello world")
-	ptr.JSON(err)
+	spew.JSON(Err("hello world"))
 }
